@@ -1,8 +1,6 @@
 <script lang="ts">
 	import type { NamedLchColor } from "$types";
 	import { CSSGenerator } from "$scripts/utils/generateCSS";
-	import CopyCodeButton from "./buttons/CopyCodeButton.svelte";
-	import { colorStore } from "$stores/colorStore";
 	import { CodeBlock } from "@skeletonlabs/skeleton";
 
 	export let inputColors: NamedLchColor[] = [];
@@ -15,13 +13,4 @@
 	}
 </script>
 
-<CodeBlock language="css" code={codeString} lineNumbers />
-
-<!-- 
-<section>
-	<CopyCodeButton {codeString} />
-	<pre class="code-block">{codeString}</pre>
-</section> -->
-
-<style>
-</style>
+<CodeBlock language="css" code={codeString} lineNumbers class="border border-primary-500" />

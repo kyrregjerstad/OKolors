@@ -21,6 +21,9 @@
 	- Add copy button to code block ✓
 	- Add option to toggle color name comments in code block
 
+	- Add about page
+	- Add section with links to articles and other oklch tools
+
 	- Add presets
 
 	- Add login?
@@ -37,15 +40,13 @@
 	});
 </script>
 
-<section class="w-full flex justify-center items-center">
-	<div class="max-w-[1920px] flex-1 sm:px-8">
-		<ColorSpaceCompatibility {deviceColorSpace} />
-		{#each $colorStore as inputColor (inputColor.id)}
-			<div animate:flip={{ duration: 350 }}>
-				<ColorRange {inputColor} />
-			</div>
-		{/each}
-		<AddNewColorButton />
-		<CodeBlock inputColors={$colorStore} />
-	</div>
+<section class="max-w-[1920px] flex-1 px-2 sm:px-8">
+	<ColorSpaceCompatibility {deviceColorSpace} />
+	{#each $colorStore as inputColor (inputColor.id)}
+		<div animate:flip={{ duration: 350 }}>
+			<ColorRange {inputColor} />
+		</div>
+	{/each}
+	<AddNewColorButton />
+	<CodeBlock inputColors={$colorStore} />
 </section>
