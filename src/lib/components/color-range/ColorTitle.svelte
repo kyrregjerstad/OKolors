@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { colorStore } from "$stores/colorStore";
 	import { capitalizeName } from "$scripts/utils/capitalizeName";
+	import { error } from "@sveltejs/kit";
 
 	export let colorName: string;
 	export let colorId: string;
@@ -24,7 +25,7 @@
 	}
 </script>
 
-<div class="name">
+<div class="name" class:error={displayName === ""}>
 	<input required min="1" bind:value={displayName} on:input={handleInputChange} />
 </div>
 
@@ -41,5 +42,9 @@
 		color: var(--color-text);
 		border: none;
 		width: 100%;
+	}
+
+	.error {
+		background-color: firebrick;
 	}
 </style>
