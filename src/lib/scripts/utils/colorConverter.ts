@@ -35,9 +35,10 @@ export class ColorConverter {
 
 	cssColorVariation(variation: number, modifier: number): string {
 		const { name } = this.color;
+		const sanitizedName = name.replace(/\s/g, "-");
 		const modifierSign = modifier < 0 ? "-" : "+";
 		const absoluteModifier = Math.abs(modifier);
-		return `--${name}-${variation}: oklch(calc(var(--${name}-l) ${modifierSign} ${absoluteModifier}) var(--${name}-c) var(--${name}-h));`;
+		return `--${sanitizedName}-${variation}: oklch(calc(var(--${name}-l) ${modifierSign} ${absoluteModifier}) var(--${name}-c) var(--${name}-h));`;
 	}
 
 	cssColorVariations(steps: Map<number, number>): string[] {
