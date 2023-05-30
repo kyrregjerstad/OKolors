@@ -1,6 +1,6 @@
 import type { NamedLchColor } from "$types";
 import { formatHex } from "culori";
-import naevner from "@samhaeng/naevner";
+// import naevner from "@samhaeng/naevner";
 
 export class ColorConverter {
 	color: NamedLchColor;
@@ -15,7 +15,8 @@ export class ColorConverter {
 	}
 
 	nameFromHex(): string {
-		return `/* ${naevner(this.toHex())} */ \n`;
+		// return `/* ${naevner(this.toHex())} */ \n`;
+		return `/* Temporary Color */ \n`;
 	}
 
 	generateVariableName(name: string, suffix: string): string {
