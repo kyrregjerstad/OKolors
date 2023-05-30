@@ -10,11 +10,19 @@ export class CSSGenerator {
 	}
 
 	generate(): string {
-		const cssSections = this.inputColors.map(color => {
-			const colorObj = new ColorConverter(color);
-			const colorSection = colorObj.cssColorVariations(lightnessSteps);
-			return colorSection.join("\n");
-		});
-		return cssSections.join("\n\n\n");
+		const cssSections = this.inputColors
+			.map(color => {
+				const colorObj = new ColorConverter(color);
+				const colorSection = colorObj.cssColorVariations(lightnessSteps);
+				return colorSection.join("\n");
+			})
+			.join("\n\n\n");
+
+		const rootContent = cssSections
+			.split("\n")
+			.map(line => (line.trim() ? `\t${line}` : line))
+			.join("\n");
+
+		return `:root {\n${rootContent}\n}`;
 	}
 }

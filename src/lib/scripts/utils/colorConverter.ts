@@ -15,7 +15,7 @@ export class ColorConverter {
 	}
 
 	nameFromHex(): string {
-		return `/* ${naevner(this.toHex())} */ \n\n`;
+		return `/* ${naevner(this.toHex())} */ \n`;
 	}
 
 	generateVariableName(name: string, suffix: string): string {
@@ -41,6 +41,7 @@ export class ColorConverter {
 
 	cssColorVariations(steps: Map<number, number>): string[] {
 		const colorVariations = Array.from(steps, ([step, modifier]) => this.cssColorVariation(step, modifier));
-		return [this.nameFromHex(), this.cssBaseVariables(), ...colorVariations];
+		const variationsString = colorVariations.join("\n").trim(); // Ensure no leading or trailing newline
+		return [this.nameFromHex(), this.cssBaseVariables(), variationsString];
 	}
 }

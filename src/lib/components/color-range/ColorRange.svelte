@@ -14,7 +14,7 @@
 <div class="wrapper" in:fly={{ y: -200 }} out:slide={{ duration: 350 }}>
 	<div class="button-and-name">
 		<DeleteColorButton colorId={inputColor.id} />
-		<ColorTitle colorName={inputColor.name} />
+		<ColorTitle colorName={inputColor.name} colorId={inputColor.id} />
 	</div>
 	<div class="color-cells">
 		{#each lightnessModifiers as modifier}
