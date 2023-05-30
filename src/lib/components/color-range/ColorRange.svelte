@@ -17,8 +17,8 @@
 		<ColorTitle colorName={inputColor.name} colorId={inputColor.id} />
 	</div>
 	<div class="color-cells">
-		{#each lightnessModifiers as modifier}
-			<ColorCell inputColor={inputColor.color} lightnessModifier={modifier} />
+		{#each lightnessModifiers as modifier, index}
+			<ColorCell inputColor={inputColor.color} lightnessModifier={modifier} {index} />
 		{/each}
 	</div>
 	<ColorInput bind:sliderInputValues={inputColor.color} colorId={inputColor.id} />
