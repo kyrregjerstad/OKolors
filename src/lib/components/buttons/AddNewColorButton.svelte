@@ -8,15 +8,4 @@
 	}
 </script>
 
-<button class="btn variant-filled" on:click={handleClick}>Add new color</button>
-
-<style>
-	button {
-		display: block;
-		margin: 0 auto;
-		font-size: var(--font-size-L);
-		background-color: white;
-		color: black;
-		padding: 1rem 2rem;
-	}
-</style>
+<button class="btn-xl rounded-full variant-filled mx-auto flex my-10" on:click={handleClick}>Add new color</button>

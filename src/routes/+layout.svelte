@@ -10,6 +10,7 @@
 	import { AppShell } from "@skeletonlabs/skeleton";
 	import { AppBar } from "@skeletonlabs/skeleton";
 	import { LightSwitch } from "@skeletonlabs/skeleton";
+	import Icon from "@iconify/svelte";
 
 	let scrollY = 0;
 
@@ -30,9 +31,19 @@
 <AppShell>
 	<svelte:fragment slot="header">
 		<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
-			<svelte:fragment slot="lead">(icon)</svelte:fragment>
+			<svelte:fragment slot="lead">
+				<div>
+					<Icon icon="tabler:color-filter" height={25} />
+				</div>
+			</svelte:fragment>
 			<h1 class="text-xl" class:text-sm={hasScrolled}>
-				{config.title}
+				<span
+					class=" bg-clip-text text-transparent box-decoration-clone text-3xl
+					bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400
+					"
+				>
+					{config.title}
+				</span>
 			</h1>
 			<svelte:fragment slot="trail"><LightSwitch /></svelte:fragment>
 		</AppBar>
