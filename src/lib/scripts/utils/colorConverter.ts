@@ -19,7 +19,8 @@ export class ColorConverter {
 	}
 
 	generateVariableName(name: string, suffix: string): string {
-		return `--${name}-${suffix}`;
+		const sanitized = name.replace(/\s/g, "-");
+		return `--${sanitized}-${suffix}`;
 	}
 
 	cssBaseVariables(): string {
