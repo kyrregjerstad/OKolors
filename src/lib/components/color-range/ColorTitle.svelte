@@ -1,9 +1,19 @@
 <script lang="ts">
-	export let displayName: string;
+	import { capitalizeName } from "$scripts/utils/capitalizeName";
+
+	export let colorName: string;
+
+	$: displayName = capitalizeName(colorName);
+
+	function handleInputChange(event: Event) {
+		const input = event.target as HTMLInputElement;
+		if (!input) return;
+		displayName = capitalizeName(input.value);
+	}
 </script>
 
 <div class="name">
-	<input required min="1" bind:value={displayName} />
+	<input required min="1" bind:value={displayName} on:input={handleInputChange} />
 </div>
 
 <style>

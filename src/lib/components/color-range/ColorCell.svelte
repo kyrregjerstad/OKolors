@@ -1,5 +1,7 @@
-<script>
-	export let inputColor = {
+<script lang="ts">
+	import type { LCH } from "$types";
+
+	export let inputColor: LCH = {
 		l: 0.5,
 		c: 0.25,
 		h: 18

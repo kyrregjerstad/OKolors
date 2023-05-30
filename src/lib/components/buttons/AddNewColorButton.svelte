@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { colorStore } from "$stores/colorStore";
+	import { colorStore, getDefaultColor } from "$stores/colorStore";
 
 	function handleClick(): void {
 		colorStore.update(colors => {
-			return [...colors, { name: "New Color", color: { l: 0.5, c: 0.5, h: 0.5 } }];
+			return [...colors, getDefaultColor()];
 		});
 	}
 </script>

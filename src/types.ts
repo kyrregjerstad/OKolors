@@ -5,5 +5,6 @@ export interface LCH {
 }
 export interface NamedLchColor {
 	name: string;
+	id: string;
 	color: LCH;
 }

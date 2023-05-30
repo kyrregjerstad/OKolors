@@ -3,11 +3,12 @@
 	import AddNewColorButton from "$lib/components/buttons/AddNewColorButton.svelte";
 	import ColorRange from "$lib/components/color-range/ColorRange.svelte";
 	import { colorStore } from "$stores/colorStore";
+	import { flip } from "svelte/animate";
 
 	/* 
 	
 	TODO: 
-	- Add a way to remove colors
+	- Add a way to remove colors ✓
 	- Add a way to change the order of colors
 
 	- Check if device is p3 compatible
@@ -31,12 +32,16 @@
 
 	
 	*/
+
+	$: console.log($colorStore);
 </script>
 
 <h1>SvelteKit Default Template</h1>
 
-{#each $colorStore as inputColor}
-	<ColorRange {inputColor} />
+{#each $colorStore as inputColor (inputColor.id)}
+	<div animate:flip={{ duration: 350 }}>
+		<ColorRange {inputColor} />
+	</div>
 {/each}
 <AddNewColorButton />
 <CodeBlock inputColors={$colorStore} />
