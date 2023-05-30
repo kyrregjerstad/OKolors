@@ -24,9 +24,17 @@
 	};
 </script>
 
-<div class="input-sliders">
-	<label for="lightness" in:fade={{ duration: 500, delay: 200 }} out:fade={{ duration: 200 }}>
+<div
+	class="input-sliders flex w-full justify-center sm:items-center gap-6 flex-col sm:flex-row mt-6 max-w-6xl lg:gap-16"
+>
+	<label
+		class="flex sm:items-center justify-center gap-2 flex-col flex-1 w-full"
+		for="lightness"
+		in:fade={{ duration: 500, delay: 200 }}
+		out:fade={{ duration: 200 }}
+	>
 		<input
+			class="w-full"
 			type="range"
 			name="lightness"
 			id=""
@@ -38,8 +46,14 @@
 		/>
 		Lightness
 	</label>
-	<label for="chroma" in:fade={{ duration: 500, delay: 300 }} out:fade={{ duration: 200 }}>
+	<label
+		class="flex sm:items-center justify-center gap-2 flex-col flex-1 w-full"
+		for="chroma"
+		in:fade={{ duration: 500, delay: 300 }}
+		out:fade={{ duration: 200 }}
+	>
 		<input
+			class="w-full"
 			type="range"
 			name=""
 			id="chrome"
@@ -51,8 +65,14 @@
 		/>
 		Chroma
 	</label>
-	<label for="hue" in:fade={{ duration: 500, delay: 400 }} out:fade={{ duration: 200 }}>
+	<label
+		class="flex sm:items-center justify-center gap-2 flex-col flex-1 w-full"
+		for="hue"
+		in:fade={{ duration: 500, delay: 400 }}
+		out:fade={{ duration: 200 }}
+	>
 		<input
+			class="w-full"
 			type="range"
 			name=""
 			id="hue"
@@ -66,17 +86,4 @@
 </div>
 
 <style>
-	.input-sliders {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 0.5rem;
-	}
-
-	label {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 0.5rem;
-	}
 </style>

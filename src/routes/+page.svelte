@@ -38,7 +38,7 @@
 </script>
 
 <section class="w-full flex justify-center items-center">
-	<div class="max-w-[1920px] flex-1">
+	<div class="max-w-[1920px] flex-1 sm:px-8">
 		<ColorSpaceCompatibility {deviceColorSpace} />
 		{#each $colorStore as inputColor (inputColor.id)}
 			<div animate:flip={{ duration: 350 }}>

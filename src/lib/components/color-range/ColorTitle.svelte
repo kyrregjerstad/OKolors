@@ -25,17 +25,11 @@
 	}
 </script>
 
-<div class="name" class:error={displayName === ""}>
+<div class="flex w-full text-xl sm:text-4xl" class:error={displayName === ""}>
 	<input required min="1" bind:value={displayName} on:input={handleInputChange} />
 </div>
 
 <style>
-	.name {
-		font-size: 2rem;
-		width: 100%;
-		display: flex;
-	}
-
 	input {
 		background-color: transparent;
 		color: var(--color-text);
