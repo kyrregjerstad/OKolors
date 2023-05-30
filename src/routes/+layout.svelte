@@ -11,6 +11,9 @@
 	import { AppBar } from "@skeletonlabs/skeleton";
 	import { LightSwitch } from "@skeletonlabs/skeleton";
 	import Icon from "@iconify/svelte";
+	import Footer from "$lib/components/layout/Footer.svelte";
+	import Header from "$lib/components/layout/Header.svelte";
+	import { clampRgb } from "culori";
 
 	let scrollY = 0;
 
@@ -25,31 +28,18 @@
 	<title>{config.title}</title>
 </svelte:head>
 
-<svelte:window bind:scrollY />
 <MetaTags />
 
 <AppShell>
 	<svelte:fragment slot="header">
-		<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
-			<svelte:fragment slot="lead">
-				<div>
-					<Icon icon="tabler:color-filter" height={25} />
-				</div>
-			</svelte:fragment>
-			<h1 class="text-xl" class:text-sm={hasScrolled}>
-				<span
-					class=" bg-clip-text text-transparent box-decoration-clone text-3xl
-					bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400
-					"
-				>
-					{config.title}
-				</span>
-			</h1>
-			<svelte:fragment slot="trail"><LightSwitch /></svelte:fragment>
-		</AppBar>
+		<Header title={config.title} />
 	</svelte:fragment>
-	<slot />
-	<svelte:fragment slot="pageFooter">Page Footer</svelte:fragment>
+	<main class="flex w-full items-center justify-center">
+		<slot />
+	</main>
+	<svelte:fragment slot="pageFooter">
+		<Footer author={config.author} />
+	</svelte:fragment>
 </AppShell>
 
 <!-- <main>
