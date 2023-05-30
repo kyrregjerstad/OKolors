@@ -25,12 +25,12 @@
 </script>
 
 <div
-	class="input-sliders flex w-full justify-center sm:items-center gap-6 flex-col sm:flex-row mt-6 max-w-6xl lg:gap-16"
+	class="input-sliders mt-6 flex w-full max-w-6xl flex-col justify-center gap-6 sm:flex-row sm:items-center lg:gap-16"
 >
 	<label
-		class="flex sm:items-center justify-center gap-2 flex-col flex-1 w-full"
+		class="flex w-full flex-1 flex-col justify-center gap-2 sm:items-center"
 		for="lightness"
-		in:fade={{ duration: 500, delay: 200 }}
+		in:fade={{ duration: 500, delay: 600 }}
 		out:fade={{ duration: 200 }}
 	>
 		<input
@@ -47,9 +47,9 @@
 		Lightness
 	</label>
 	<label
-		class="flex sm:items-center justify-center gap-2 flex-col flex-1 w-full"
+		class="flex w-full flex-1 flex-col justify-center gap-2 sm:items-center"
 		for="chroma"
-		in:fade={{ duration: 500, delay: 300 }}
+		in:fade={{ duration: 500, delay: 800 }}
 		out:fade={{ duration: 200 }}
 	>
 		<input
@@ -66,9 +66,9 @@
 		Chroma
 	</label>
 	<label
-		class="flex sm:items-center justify-center gap-2 flex-col flex-1 w-full"
+		class="flex w-full flex-1 flex-col justify-center gap-2 sm:items-center"
 		for="hue"
-		in:fade={{ duration: 500, delay: 400 }}
+		in:fade={{ duration: 500, delay: 1000 }}
 		out:fade={{ duration: 200 }}
 	>
 		<input

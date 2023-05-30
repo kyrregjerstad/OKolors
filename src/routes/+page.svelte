@@ -34,6 +34,8 @@
 
 	- "Can i use" for oklch
 
+	- Add option for random color, dice icon
+
 	*/
 
 	let deviceColorSpace: string | null = null;
