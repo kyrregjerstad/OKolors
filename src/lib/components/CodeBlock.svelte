@@ -24,8 +24,8 @@
 		position: relative;
 	}
 	pre {
-		font-family: monospace;
-		font-size: 1.1rem;
+		font-family: "JetBrains Mono";
+		font-size: 1rem;
 		background-color: var(--color-100);
 		color: var(--color-900);
 		padding: 1rem;
@@ -34,5 +34,7 @@
 		width: 100%;
 		overflow: scroll;
 		text-align: left;
+		border: solid 1px white;
+		border-radius: 1rem;
 	}
 </style>

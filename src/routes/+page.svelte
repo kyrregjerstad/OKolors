@@ -16,6 +16,7 @@
 	- Check if device is p3 compatible ✓
 
 	- Add better color picker
+	- Add option to enter hex code
 
 	- Add copy button to code block ✓
 	- Add option to toggle color name comments in code block
@@ -27,8 +28,6 @@
 	- Add option to share presets
 
 	- Highlight that the center color is the one that is being changed
-
-	- Fix CSS name bug
 
 	*/
 
