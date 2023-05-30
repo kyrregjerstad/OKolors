@@ -8,12 +8,8 @@
 	import "highlight.js/styles/github-dark.css";
 	import { storeHighlightJs } from "@skeletonlabs/skeleton";
 	import { AppShell } from "@skeletonlabs/skeleton";
-	import { AppBar } from "@skeletonlabs/skeleton";
-	import { LightSwitch } from "@skeletonlabs/skeleton";
-	import Icon from "@iconify/svelte";
 	import Footer from "$lib/components/layout/Footer.svelte";
 	import Header from "$lib/components/layout/Header.svelte";
-	import { clampRgb } from "culori";
 
 	let scrollY = 0;
 
@@ -34,7 +30,7 @@
 	<svelte:fragment slot="header">
 		<Header title={config.title} />
 	</svelte:fragment>
-	<main class="flex w-full items-center justify-center">
+	<main class="flex w-full flex-col items-center justify-center gap-20 px-2 sm:px-8">
 		<slot />
 	</main>
 	<svelte:fragment slot="pageFooter">
