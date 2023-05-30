@@ -9,12 +9,12 @@
 	}
 </script>
 
-<button on:click={handleDeleteClick}>
-	<Icon icon="material-symbols:delete-outline" />
+<button on:click={handleDeleteClick} class="flex items-center justify-center text-2xl mr-2 translate-y-0.5 hover:text-warning-500 " >
+	<Icon icon="material-symbols:close"  />
 </button>
 
 <style lang="postcss">
-	button {
+	/* button {
 		background: none;
 		font-size: 2rem;
 		margin-inline: 1rem;
@@ -23,5 +23,5 @@
 		&:hover {
 			color: red;
 		}
-	}
+	} */
 </style>

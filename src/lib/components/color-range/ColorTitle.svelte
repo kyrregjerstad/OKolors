@@ -32,7 +32,6 @@
 <style>
 	.name {
 		font-size: 2rem;
-		align-self: flex-start;
 		width: 100%;
 		display: flex;
 	}

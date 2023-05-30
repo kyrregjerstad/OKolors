@@ -8,7 +8,7 @@
 	}
 </script>
 
-<button on:click={handleClick}> Add new color </button>
+<button class="btn variant-filled" on:click={handleClick}>Add new color</button>
 
 <style>
 	button {

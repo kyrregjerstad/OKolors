@@ -11,8 +11,8 @@
 	export let inputColor: NamedLchColor;
 </script>
 
-<div class="wrapper" in:fly={{ y: -200 }} out:slide={{ duration: 350 }}>
-	<div class="button-and-name">
+<div class="wrapper card p-4 my-5" in:fly={{ y: -200 }} out:slide={{ duration: 350 }}>
+	<div class="flex items-center justify-center ">
 		<DeleteColorButton colorId={inputColor.id} />
 		<ColorTitle colorName={inputColor.name} colorId={inputColor.id} />
 	</div>
@@ -33,17 +33,4 @@
 		margin-block: 1rem;
 	}
 
-	.wrapper {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		margin-block: 3rem;
-	}
-
-	.button-and-name {
-		display: flex;
-		align-items: center;
-		align-self: flex-start;
-	}
 </style>

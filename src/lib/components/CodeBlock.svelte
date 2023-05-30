@@ -3,6 +3,7 @@
 	import { CSSGenerator } from "$scripts/utils/generateCSS";
 	import CopyCodeButton from "./buttons/CopyCodeButton.svelte";
 	import { colorStore } from "$stores/colorStore";
+	import { CodeBlock } from "@skeletonlabs/skeleton";
 
 	export let inputColors: NamedLchColor[] = [];
 
@@ -14,27 +15,13 @@
 	}
 </script>
 
+<CodeBlock language="css" code={codeString} lineNumbers />
+
+<!-- 
 <section>
 	<CopyCodeButton {codeString} />
 	<pre class="code-block">{codeString}</pre>
-</section>
+</section> -->
 
 <style>
-	section {
-		position: relative;
-	}
-	pre {
-		font-family: "JetBrains Mono";
-		font-size: 1rem;
-		background-color: var(--color-100);
-		color: var(--color-900);
-		padding: 1rem;
-		border-radius: 0.5rem;
-		margin-block: 1rem;
-		width: 100%;
-		overflow: scroll;
-		text-align: left;
-		border: solid 1px white;
-		border-radius: 1rem;
-	}
 </style>
