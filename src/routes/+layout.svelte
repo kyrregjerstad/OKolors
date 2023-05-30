@@ -1,27 +1,49 @@
 <script lang="ts">
-	import "@skeletonlabs/skeleton/themes/theme-skeleton.css";
+	import "../theme.postcss";
 	import "@skeletonlabs/skeleton/styles/skeleton.css";
 	import "../app.postcss";
-
 	import * as config from "$config";
 	import MetaTags from "$lib/components/SEO/MetaTags.svelte";
-
 	import hljs from "highlight.js";
 	import "highlight.js/styles/github-dark.css";
 	import { storeHighlightJs } from "@skeletonlabs/skeleton";
+	import { AppShell } from "@skeletonlabs/skeleton";
+	import { AppBar } from "@skeletonlabs/skeleton";
+	import { LightSwitch } from "@skeletonlabs/skeleton";
+
+	let scrollY = 0;
+
+	$: hasScrolled = scrollY > 50;
+
+	$: console.log(scrollY);
 
 	storeHighlightJs.set(hljs);
-	// import "$styles/app.css";
 </script>
 
 <svelte:head>
 	<title>{config.title}</title>
 </svelte:head>
+
+<svelte:window bind:scrollY />
 <MetaTags />
 
-<main>
+<AppShell>
+	<svelte:fragment slot="header">
+		<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
+			<svelte:fragment slot="lead">(icon)</svelte:fragment>
+			<h1 class="text-xl" class:text-sm={hasScrolled}>
+				{config.title}
+			</h1>
+			<svelte:fragment slot="trail"><LightSwitch /></svelte:fragment>
+		</AppBar>
+	</svelte:fragment>
 	<slot />
-</main>
+	<svelte:fragment slot="pageFooter">Page Footer</svelte:fragment>
+</AppShell>
+
+<!-- <main>
+	<slot />
+</main> -->
 
 <style>
 </style>

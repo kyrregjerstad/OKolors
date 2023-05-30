@@ -1,6 +1,6 @@
 import { dev } from "$app/environment";
 
-export const title = "Project Title";
+export const title = "OKolor";
 export const description = "";
 export const url = dev ? "http://localhost:5177/" : "url";
 export const author = "Kyrre Gjerstad";

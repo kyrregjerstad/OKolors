@@ -35,11 +35,7 @@
 	onMount(() => {
 		deviceColorSpace = window.matchMedia("(color-gamut: p3)").matches ? "p3" : "srgb";
 	});
-
-	$: console.log($colorStore);
 </script>
-
-<h1>SvelteKit Default Template</h1>
 
 <ColorSpaceCompatibility {deviceColorSpace} />
 {#each $colorStore as inputColor (inputColor.id)}
