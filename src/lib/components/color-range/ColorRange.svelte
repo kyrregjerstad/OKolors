@@ -11,12 +11,12 @@
 	export let inputColor: NamedLchColor;
 </script>
 
-<div class="wrapper card p-4 my-5" in:fly={{ y: -200 }} out:slide={{ duration: 350 }}>
-	<div class="flex items-center justify-center ">
+<div class="card p-4 my-5" in:fly={{ y: -200 }} out:slide={{ duration: 350 }}>
+	<div class="flex items-center justify-center">
 		<DeleteColorButton colorId={inputColor.id} />
 		<ColorTitle colorName={inputColor.name} colorId={inputColor.id} />
 	</div>
-	<div class="color-cells">
+	<div class="color-cells flex gap-1 w-full h-[250px] my-3">
 		{#each lightnessModifiers as modifier, index}
 			<ColorCell inputColor={inputColor.color} lightnessModifier={modifier} {index} />
 		{/each}
@@ -25,12 +25,4 @@
 </div>
 
 <style>
-	.color-cells {
-		display: flex;
-		gap: 0.5rem;
-		width: 100%;
-		height: 200px;
-		margin-block: 1rem;
-	}
-
 </style>
