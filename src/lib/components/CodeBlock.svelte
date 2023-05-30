@@ -16,9 +16,7 @@
 
 <section>
 	<CopyCodeButton {codeString} />
-	<pre class="code-block">
-		{codeString}
-	</pre>
+	<pre class="code-block">{codeString}</pre>
 </section>
 
 <style>
