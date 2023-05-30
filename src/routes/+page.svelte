@@ -37,23 +37,15 @@
 	});
 </script>
 
-<ColorSpaceCompatibility {deviceColorSpace} />
-{#each $colorStore as inputColor (inputColor.id)}
-	<div animate:flip={{ duration: 350 }}>
-		<ColorRange {inputColor} />
+<section class="w-full flex justify-center items-center">
+	<div class="max-w-[1920px] flex-1">
+		<ColorSpaceCompatibility {deviceColorSpace} />
+		{#each $colorStore as inputColor (inputColor.id)}
+			<div animate:flip={{ duration: 350 }}>
+				<ColorRange {inputColor} />
+			</div>
+		{/each}
+		<AddNewColorButton />
+		<CodeBlock inputColors={$colorStore} />
 	</div>
-{/each}
-<AddNewColorButton />
-<CodeBlock inputColors={$colorStore} />
-
-<style>
-	h1 {
-		color: var(--test-100);
-	}
-
-	@media (color-gamut: p3) {
-		h1 {
-			color: hotpink;
-		}
-	}
-</style>
+</section>
