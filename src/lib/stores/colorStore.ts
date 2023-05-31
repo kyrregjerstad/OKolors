@@ -4,7 +4,7 @@ export const colorStore = writable([
 	{
 		name: "primary",
 		id: crypto.randomUUID(),
-		color: {
+		values: {
 			l: 0.5,
 			c: 0.25,
 			h: 18
@@ -13,7 +13,7 @@ export const colorStore = writable([
 	{
 		name: "secondary",
 		id: crypto.randomUUID(),
-		color: {
+		values: {
 			l: 0.5,
 			c: 0.25,
 			h: 180
@@ -25,7 +25,7 @@ export function getDefaultColor() {
 	return {
 		name: "New Color",
 		id: crypto.randomUUID(),
-		color: {
+		values: {
 			l: 0.5,
 			c: 0.25,
 			h: 18

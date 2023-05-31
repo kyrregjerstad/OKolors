@@ -2,7 +2,7 @@ import type { NamedLchColor } from "$types";
 import { formatHex } from "culori";
 // import naevner from "@samhaeng/naevner";
 
-export class CssCustomPropertyGenerator {
+export class CssCustomPropertiesGenerator {
 	color: NamedLchColor;
 
 	constructor(color: NamedLchColor) {
@@ -10,7 +10,7 @@ export class CssCustomPropertyGenerator {
 	}
 
 	toHex(): string {
-		const { l, c, h } = this.color.color;
+		const { l, c, h } = this.color.values;
 		return formatHex(`oklch(${l} ${c} ${h})`) as string;
 	}
 
@@ -19,13 +19,17 @@ export class CssCustomPropertyGenerator {
 		return `/* Temporary Color */ \n`;
 	}
 
+	sanitizeName(name: string): string {
+		return name.replace(/\s/g, "-");
+	}
+
 	generateCustomPropertyName(name: string, suffix: string): string {
-		const sanitized = name.replace(/\s/g, "-");
-		return `--${sanitized}-${suffix}`;
+		const sanitizedName = this.sanitizeName(name);
+		return `--${sanitizedName}-${suffix}`;
 	}
 
 	generateBaseColorCustomProperties(): string {
-		const { name, color: colorValues } = this.color;
+		const { name, values: colorValues } = this.color;
 		const customProperties = [
 			`${this.generateCustomPropertyName(name, "l")}: ${colorValues.l};`,
 			`${this.generateCustomPropertyName(name, "c")}: ${colorValues.c};`,
@@ -36,7 +40,7 @@ export class CssCustomPropertyGenerator {
 
 	generateColorVariation(variation: number, modifier: number): string {
 		const { name } = this.color;
-		const sanitizedName = name.replace(/\s/g, "-");
+		const sanitizedName = this.sanitizeName(name);
 		const modifierSign = modifier < 0 ? "-" : "+";
 		const absoluteModifier = Math.abs(modifier);
 		return `--${sanitizedName}-${variation}: oklch(calc(var(--${name}-l) ${modifierSign} ${absoluteModifier}) var(--${name}-c) var(--${name}-h));`;
