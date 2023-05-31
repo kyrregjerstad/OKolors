@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { NamedLchColor } from "$types";
-	import { CSSGenerator } from "$scripts/utils/generateCSS";
+	import { CssCodeBlockGenerator } from "$scripts/utils/cssCodeBlockGenerator";
 	import { CodeBlock } from "@skeletonlabs/skeleton";
 
 	export let inputColors: NamedLchColor[] = [];
@@ -8,7 +8,7 @@
 	let codeString = "";
 
 	$: {
-		const generator = new CSSGenerator(inputColors);
+		const generator = new CssCodeBlockGenerator(inputColors);
 		codeString = generator.generateRootCss();
 	}
 </script>

@@ -1,8 +1,8 @@
 import type { NamedLchColor } from "$types";
-import { CssCustomPropertiesGenerator } from "./colorConverter";
+import { CssCustomPropertiesGenerator } from "./cssCustomPropertiesGenerator";
 import { lightnessSteps } from "$lib/lightnessModifiers";
 
-export class CSSGenerator {
+export class CssCodeBlockGenerator {
 	sourceColors: NamedLchColor[];
 
 	constructor(sourceColors: NamedLchColor[]) {
