@@ -9,7 +9,7 @@
 
 	$: {
 		const generator = new CSSGenerator(inputColors);
-		codeString = generator.generate();
+		codeString = generator.generateRootCss();
 	}
 </script>
 
