@@ -13,6 +13,9 @@
 	import type { LayoutData } from "./$types";
 	import { onMount } from "svelte";
 	import { invalidate } from "$app/navigation";
+	import { computePosition, autoUpdate, offset, shift, flip, arrow } from "@floating-ui/dom";
+	import { storePopup } from "@skeletonlabs/skeleton";
+	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
 	export let data: LayoutData;
 
@@ -39,7 +42,7 @@
 
 <AppShell>
 	<svelte:fragment slot="header">
-		<Header title={config.title} />
+		<Header title={config.title} {session} />
 	</svelte:fragment>
 	<main class="flex w-full flex-col items-center justify-center gap-20 px-2 sm:px-8">
 		<slot />
