@@ -1,22 +1,14 @@
+// cssCustomPropertiesGenerator.ts
 import type { NamedLchColor } from "$types";
-import { formatHex } from "culori";
-// import naevner from "@samhaeng/naevner";
+import { ConvertColor } from "./ConvertColor";
 
 export class CssCustomPropertiesGenerator {
 	color: NamedLchColor;
+	convertColor: ConvertColor;
 
 	constructor(color: NamedLchColor) {
 		this.color = color;
-	}
-
-	toHex(): string {
-		const { l, c, h } = this.color.values;
-		return formatHex(`oklch(${l} ${c} ${h})`) as string;
-	}
-
-	nameFromHex(): string {
-		// return `/* ${naevner(this.toHex())} */ \n`;
-		return `/* Temporary Color */ \n`;
+		this.convertColor = new ConvertColor(color);
 	}
 
 	sanitizeName(name: string): string {
@@ -38,7 +30,7 @@ export class CssCustomPropertiesGenerator {
 		return customProperties.join("\n");
 	}
 
-	generateColorVariation(variation: number, modifier: number): string {
+	generateColorVariations(variation: number, modifier: number): string {
 		const { name } = this.color;
 		const sanitizedName = this.sanitizeName(name);
 		const modifierSign = modifier < 0 ? "-" : "+";
@@ -47,8 +39,8 @@ export class CssCustomPropertiesGenerator {
 	}
 
 	generateCustomProperties(steps: Map<number, number>): string[] {
-		const colorVariations = Array.from(steps, ([step, modifier]) => this.generateColorVariation(step, modifier));
+		const colorVariations = Array.from(steps, ([step, modifier]) => this.generateColorVariations(step, modifier));
 		const variationsString = colorVariations.join("\n").trim(); // Ensure no leading or trailing newline
-		return [this.nameFromHex(), this.generateBaseColorCustomProperties(), variationsString];
+		return [this.convertColor.toName(), this.generateBaseColorCustomProperties(), variationsString];
 	}
 }
