@@ -55,7 +55,7 @@
 	<CodeBlock inputColors={$colorStore} />
 </section>
 <section class="flex-1">
-	<div class="card w-full p-4">
+	<div class="card flex w-full flex-col p-4 sm:p-8">
 		<h2 class="h2 my-5">What is OKLCH?</h2>
 
 		<article class="prose text-justify">
@@ -75,13 +75,13 @@
 				web design and development. Give it a whirl!
 			</p>
 		</article>
-		<div class="list-nav mt-10">
+		<div class="list mt-10 flex flex-col">
 			<h3 class="h3 my-3">Some other great resources about OKLCH</h3>
-			<ul>
+			<ul class="flex flex-col gap-5">
 				<li>
 					<a href="https://oklch.com/">
 						<span class="badge bg-primary-500">⚡</span>
-						<span class="flex-auto">OKLCH Color Picker & Converter</span>
+						<span class="w-full break-words"> OKLCH Color Picker & Converter </span>
 					</a>
 				</li>
 				<li>
