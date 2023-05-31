@@ -28,6 +28,46 @@ export interface Database {
 	};
 	public: {
 		Tables: {
+			colors: {
+				Row: {
+					c: number;
+					created_at: string;
+					h: number;
+					id: string;
+					l: number;
+					name: string | null;
+					updated_at: string;
+					user_id: string;
+				};
+				Insert: {
+					c: number;
+					created_at?: string;
+					h: number;
+					id?: string;
+					l: number;
+					name?: string | null;
+					updated_at?: string;
+					user_id: string;
+				};
+				Update: {
+					c?: number;
+					created_at?: string;
+					h?: number;
+					id?: string;
+					l?: number;
+					name?: string | null;
+					updated_at?: string;
+					user_id?: string;
+				};
+				Relationships: [
+					{
+						foreignKeyName: "colors_user_id_fkey";
+						columns: ["user_id"];
+						referencedRelation: "users";
+						referencedColumns: ["id"];
+					}
+				];
+			};
 			profiles: {
 				Row: {
 					created_at: string;
