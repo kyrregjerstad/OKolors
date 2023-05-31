@@ -11,8 +11,6 @@
 
 	$: ({ full_name } = session?.user.user_metadata || { full_name: "User" });
 
-	$: console.log(full_name);
-
 	const popupHover: PopupSettings = {
 		event: "click",
 		target: "popupHover",
@@ -29,13 +27,14 @@
 		</div>
 	</svelte:fragment>
 	<h1 class="text-xl" class:text-sm={hasScrolled}>
-		<span
+		<a
+			href="/"
 			class=" bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400
 					box-decoration-clone bg-clip-text text-3xl text-transparent
 					"
 		>
 			{title}
-		</span>
+		</a>
 	</h1>
 	<svelte:fragment slot="trail">
 		{#if session}
@@ -45,7 +44,9 @@
 			<div class="card variant-filled-primary p-8" data-popup="popupHover">
 				<h4 class="h4 my-2">Hi {full_name || "There"}! 👋</h4>
 				<ul class="list my-5 flex flex-col gap-1">
-					<li>- Account</li>
+					<li>
+						<a href="/account">Account</a>
+					</li>
 					<li>- My Presets</li>
 				</ul>
 				<form action="/logout" method="POST">
