@@ -10,12 +10,23 @@
 	import { AppShell } from "@skeletonlabs/skeleton";
 	import Footer from "$lib/components/layout/Footer.svelte";
 	import Header from "$lib/components/layout/Header.svelte";
+	import type { LayoutData } from "./$types";
+	import { onMount } from "svelte";
+	import { invalidate } from "$app/navigation";
 
-	let scrollY = 0;
+	export let data: LayoutData;
 
-	$: hasScrolled = scrollY > 50;
-
-	$: console.log(scrollY);
+	$: ({ session, supabase } = data);
+	onMount(() => {
+		const {
+			data: { subscription }
+		} = supabase.auth.onAuthStateChange((event, _session) => {
+			if (_session?.expires_at !== session?.expires_at) {
+				invalidate("supabase:auth");
+			}
+		});
+		return () => subscription.unsubscribe();
+	});
 
 	storeHighlightJs.set(hljs);
 </script>
