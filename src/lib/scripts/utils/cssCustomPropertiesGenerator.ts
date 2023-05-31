@@ -1,4 +1,3 @@
-// cssCustomPropertiesGenerator.ts
 import type { NamedLchColor } from "$types";
 import { ConvertColor } from "./ConvertColor";
 
