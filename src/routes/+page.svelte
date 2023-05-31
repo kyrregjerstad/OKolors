@@ -4,7 +4,6 @@
 	import AddNewColorButton from "$lib/components/buttons/AddNewColorButton.svelte";
 	import ColorRange from "$lib/components/color-range/ColorRange.svelte";
 	import { colorStore } from "$stores/colorStore";
-	import { onMount } from "svelte";
 	import { flip } from "svelte/animate";
 
 	/* 
@@ -37,15 +36,10 @@
 	- Add option for random color, dice icon
 
 	*/
-
-	let deviceColorSpace: string | null = null;
-	onMount(() => {
-		deviceColorSpace = window.matchMedia("(color-gamut: p3)").matches ? "p3" : "srgb";
-	});
 </script>
 
 <section class="max-w-[1920px] flex-1">
-	<ColorSpaceCompatibility {deviceColorSpace} />
+	<ColorSpaceCompatibility />
 	{#each $colorStore as inputColor (inputColor.id)}
 		<div animate:flip={{ duration: 350 }}>
 			<ColorRange {inputColor} />
