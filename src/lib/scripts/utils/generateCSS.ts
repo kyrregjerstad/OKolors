@@ -1,5 +1,5 @@
 import type { NamedLchColor } from "$types";
-import { CssCustomPropertyGenerator } from "./colorConverter";
+import { CssCustomPropertiesGenerator } from "./colorConverter";
 import { lightnessSteps } from "$lib/lightnessModifiers";
 
 export class CSSGenerator {
@@ -12,8 +12,8 @@ export class CSSGenerator {
 	generateRootCss(): string {
 		const cssSections = this.sourceColors
 			.map(color => {
-				const colorObj = new CssCustomPropertyGenerator(color);
-				const colorVariantsSection = colorObj.generateCustomProperties(lightnessSteps);
+				const customPropertiesGenerator = new CssCustomPropertiesGenerator(color);
+				const colorVariantsSection = customPropertiesGenerator.generateCustomProperties(lightnessSteps);
 				return colorVariantsSection.join("\n");
 			})
 			.join("\n\n\n");
