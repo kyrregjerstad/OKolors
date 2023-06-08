@@ -5,8 +5,8 @@ dependencies:
     specifier: ^1.0.5
     version: 1.0.5
   culori:
-    specifier: ^3.1.0
-    version: 3.1.0
+    specifier: ^3.1.2
+    version: 3.1.2
   highlight.js:
     specifier: ^11.8.0
     version: 11.8.0
@@ -1376,8 +1376,8 @@ packages:
     hasBin: true
     dev: true
 
-  /culori@3.1.0:
-    resolution: {integrity: sha512-UfE5Cz+Hy67GljfCTobMeEyOd8EfUk0Gd32N4ZrpzgWBssJEkFDg917t0CM5g1yK7MqB7MBneJfh2maIHjBrFQ==}
+  /culori@3.1.2:
+    resolution: {integrity: sha512-RT5C5hGTmmI2zGPdB6/Qt0NtXUYU9qB7XB4Phh14qrsJcfBQXWqPC/eKcBGuk1+Rrr9AsfOz1EwwmaBFpl0pyQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: false
 

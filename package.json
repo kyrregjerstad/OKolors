@@ -47,7 +47,7 @@
 	"type": "module",
 	"dependencies": {
 		"@samhaeng/naevner": "^1.0.5",
-		"culori": "^3.1.0",
+		"culori": "^3.1.2",
 		"highlight.js": "^11.8.0",
 		"uninstall": "^0.0.0"
 	}
