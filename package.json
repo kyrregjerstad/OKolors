@@ -12,7 +12,7 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@csstools/postcss-oklab-function": "^2.2.3",
+		"@csstools/postcss-oklab-function": "^3.0.0",
 		"@iconify/svelte": "^3.1.4",
 		"@skeletonlabs/skeleton": "^1.7.1",
 		"@sveltejs/adapter-auto": "^2.0.0",
