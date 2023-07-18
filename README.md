@@ -23,7 +23,7 @@ Before starting, ensure you have Node.js and npm installed on your system. I'm u
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/okolors.git
+git clone https://github.com/kyrregjerstad/okolors.git
 ```
 2. Navigate to the `okolors` directory:
 ```bash
