@@ -1,52 +1,63 @@
-# SvelteKit Template
+# OKolors
 
-This is a SvelteKit project template configured with your preferred settings and file structure.
+OKolors is a lightweight and interactive web application that allows users to generate stunning OKLCH CSS color palettes effortlessly. Built with SvelteKit, the app provides an intuitive and dynamic user experience, enabling users to bring their design ideas to life in a modern color space.
 
-## Getting Started
+## Table of Contents
 
-1. **Clone the project**
+- [Features](#features)
+- [Installation](#installation)
+- [Running the Application](#running-the-application)
+- [Contribution](#contribution)
+- [License](#license)
 
+## Features
+
+- **Generate OKLCH CSS Color Palettes**: Create and adjust OKLCH color palettes on the fly.
+- **Interactive UI**: Adjust lightness, chroma, and hue using sliders for precise control.
+- **Instant Preview**: See changes to your palette in real time.
+- **Export Functionality**: Easily export your created palettes for use in CSS.
+
+## Installation
+
+Before starting, ensure you have Node.js and npm installed on your system. I'm using [pnpm](https://pnpm.io/) as the package manager.
+
+1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/your-template-repo.git
+git clone https://github.com/kyrregjerstad/okolors.git
+```
+2. Navigate to the `okolors` directory:
+```bash
+cd okolors
+```
+3. Install the dependencies:
+```bash
+pnpm i
 ```
 
-2. **Navigate into the project directory**
+## Running the Application
+
+After installing the necessary dependencies, start the development server:
 
 ```bash
-cd your-template-repo
+pnpm dev
 ```
 
-3. **Install the dependencies**
+The application should now be running on [localhost:5173](http://localhost:5173).
 
-```bash
-pnpm install
-```
+## Contribution
 
-4. **Start the development server**
+Contributions to OKolors are always welcome. Whether you're looking to fix bugs, add new features, or update documentation, your help is greatly appreciated!
 
-```bash
-pnpm run dev
-```
+To contribute:
 
-Now you should be able to see the project running at localhost:5000.
+1. Fork the repository and create your branch from `main`.
+2. Make your changes.
+3. Push your branch and open a pull request.
 
-## Building for Production
-
-To create an optimized version of the app:
-
-```bash
-pnpm run build
-```
-
-## Learn More
-
-To learn more about SvelteKit, check out the [SvelteKit Documentation](https://kit.svelte.dev/docs).
+Please make sure your contributions adhere to our coding guidelines.
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-```
-
-Feel free to customize this README to fit your specific project needs and add any additional sections that might be useful for your users, such as a 'Contributing' section, or detailed 'Usage' instructions.
-```
+Enjoy using OKolors and happy designing!
