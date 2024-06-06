@@ -52,21 +52,25 @@
 	<div class="card flex w-full flex-col p-4 sm:p-8">
 		<h2 class="h2 my-5">What is OKLCH?</h2>
 
-		<article class="prose text-justify">
+		<article class="prose text-justify text-on-surface-token">
 			<p class="leading-7">
-				Alright, let's dive into this OKLCH thing. It's a cool, new way to play around with CSS colors. Basically,
-				you've got four parts to it: Lightness, Chroma, Hue, and Alpha. Lightness is just how light or dark the color
-				is, from pitch black (0%) to blinding white (100%). Chroma adds the color's intensity, or saturation. Hue is the
-				base color, picked from a wheel that goes from 0 to 360 degrees. Alpha is the secret sauce for how see-through
-				your color is, going from invisible (0) to totally opaque (1).
+				OKLCH is a modern color space designed for improved perceptual uniformity and color management in digital
+				imaging and design applications. Standing for OK Lightness, Chroma, and Hue, OKLCH builds upon the OKLAB color
+				space, which itself is an advancement over traditional color spaces like sRGB and Lab. The key advantage of
+				OKLCH is its ability to represent colors in a way that aligns more closely with human vision, ensuring that
+				color differences perceived by viewers are consistent across various contexts. This is particularly useful for
+				tasks such as color grading, where subtle variations in color must be managed precisely.
 			</p>
-			<!-- <br /> -->
+
 			<p class="leading-7">
-				The cool thing about OKLCH? It behaves just like you'd expect when you're tweaking colors, which is super handy.
-				Plus, it's ready for the future, supporting a way wider range of colors than the usual sRGB, even if not all
-				screens can show these colors just yet. But don't worry, browsers got your back and will adjust to the closest
-				color they can handle. So, OKLCH isn't just a fancy new toy, it's got some serious game-changing potential in
-				web design and development. Give it a whirl!
+				In technical terms, OKLCH decomposes colors into three components: lightness (L), chroma (C), and hue (H).
+				Lightness represents the perceived brightness of a color, chroma denotes the color's intensity or saturation,
+				and hue specifies the color's position on the color wheel. By separating these attributes, OKLCH allows for more
+				intuitive color manipulation, making it easier to adjust specific aspects of a color without unintended shifts
+				in other attributes. This separation is achieved through a perceptually uniform space, which means that the
+				mathematical distance between colors in OKLCH corresponds more accurately to perceived differences in color. As
+				a result, OKLCH facilitates more precise color adjustments and consistent color reproduction across different
+				devices and media.
 			</p>
 		</article>
 		<div class="list mt-10 flex flex-col">
