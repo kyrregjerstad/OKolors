@@ -22,6 +22,7 @@
 
 <svelte:head>
 	<title>{config.title}</title>
+	<script defer data-domain="colors.kyrre.dev" src={"https://insight.webstad.com/js/script.js"}></script>
 </svelte:head>
 
 <MetaTags />
